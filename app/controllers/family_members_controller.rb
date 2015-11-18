@@ -56,7 +56,7 @@ class FamilyMembersController < ApplicationController
   def destroy
     @family_member.destroy
     respond_to do |format|
-      format.html { redirect_to family_members_url, notice: 'Family member was successfully destroyed.' }
+      format.html { redirect_to family_members_url, notice: 'Family member was successfully deleted.' }
       format.json { head :no_content }
     end
   end
