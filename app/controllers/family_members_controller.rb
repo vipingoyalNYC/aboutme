@@ -65,6 +65,8 @@ class FamilyMembersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_family_member
       @family_member = FamilyMember.find(params[:id])
+      @comments = @family_member.comments.all
+      @comment = @family_member.comments.build
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

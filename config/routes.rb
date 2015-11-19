@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   get 'about' => 'pages#info'
   get 'contact' => 'pages#contact'
 
