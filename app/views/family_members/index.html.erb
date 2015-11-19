@@ -11,6 +11,15 @@
         <%= image_tag family_member.picture_url, width: '100%' if family_member.picture.present?%>
         <h4><%= link_to family_member.name, family_member %></h4>
         <h5><%= family_member.relationship %>, <%= family_member.age %></h5>
+        <br>
+        <h4>Comments</h4>
+        <% family_member.comments.each do |comment| %>
+          <div>
+            <strong><%= comment.user_name %></strong>
+            <br />
+            <p><%= comment.body %></p>
+          </div>
+        <% end %>
         <br><br>
       </div>
     <% end %>
