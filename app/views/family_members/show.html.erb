@@ -1,24 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @family_member.name %>
-</p>
+<div class="row">
+  <div class="col-md-9">
+    <%= image_tag(@family_member.picture_url, width: '100%') if @family_member.picture.present? %>
+  </div>
 
-<p>
-  <strong>Relationship:</strong>
-  <%= @family_member.relationship %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @family_member.age %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag(@family_member.picture_url, :width => 600) if @family_member.picture.present? %>
-</p>
-
-<%= link_to 'Edit', edit_family_member_path(@family_member) %> |
-<%= link_to 'Back', family_members_path %>
+  <div class="col-md-3">
+    <p><b>Name: </b><%= @family_member.name %></p>
+    <p><b>Relationship: </b><%= @family_member.relationship %></p>
+    <p><b>Age: </b><%= @family_member.age %></p>
+    <p>
+      <%= link_to 'Edit', edit_family_member_path(@family_member) %> |
+      <%= link_to 'Delete', @family_member, data: { confirm: 'Are you sure?' }, method: :delete %> |
+      <%= link_to 'Back', family_members_path %>
+    </p>
+  </div>
+</div>
